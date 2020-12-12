@@ -1,3 +1,3 @@
-# Boilerplate React
+# Hacker news
 
-My react boilerplate with webpack, babel, eslint, sass, jest, testing-library and Github Actions workflow
+A React-Redux application that provides an interface to API Hacker News
