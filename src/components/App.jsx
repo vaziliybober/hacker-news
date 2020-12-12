@@ -1,7 +1,18 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+import Home from './Home.jsx';
+import Article from './Article.jsx';
 
 export default () => (
-  <>
-    <h1>Hacker News</h1>
-  </>
+  <BrowserRouter>
+    <Switch>
+      <Route exact path="/">
+        <Home />
+      </Route>
+      <Route path="/:id">
+        <Article />
+      </Route>
+    </Switch>
+  </BrowserRouter>
 );
