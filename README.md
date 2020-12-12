@@ -5,3 +5,16 @@
 ![Node CI](https://github.com/vaziliybober/hacker-news/workflows/Node%20CI/badge.svg)
 
 A React-Redux application that provides an interface to API Hacker News
+
+# Link
+
+https://hacker-news.vaziliybober.vercel.app/
+
+# Clone
+
+```
+git clone git@github.com:vaziliybober/hacker-news.git
+cd hacker-news
+make install
+make develop
+```
