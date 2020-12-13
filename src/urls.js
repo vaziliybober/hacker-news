@@ -1,5 +1,7 @@
-const news = () => 'https://hacker-news.firebaseio.com/v0/newstories.json';
+const articles = () => 'https://hacker-news.firebaseio.com/v0/newstories.json';
+const article = (id) => `https://hacker-news.firebaseio.com/v0/item/${id}.json`;
 
 export default {
-  news,
+  articles,
+  article,
 };

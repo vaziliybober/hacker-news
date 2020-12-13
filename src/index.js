@@ -1,3 +1,8 @@
-import runApp from './init.jsx';
+import ReactDOM from 'react-dom';
+import createApp from './createApp.jsx';
+import '../styles/application.scss';
 
-runApp();
+ReactDOM.render(
+  createApp(),
+  document.getElementById('react-root'),
+);
