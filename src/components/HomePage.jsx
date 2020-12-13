@@ -1,9 +1,12 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Container, Spinner, ListGroup } from 'react-bootstrap';
+import {
+  Container, Spinner, ListGroup, Button,
+} from 'react-bootstrap';
 
 import Article from './Article.jsx';
+import { asyncActions } from '../slices/index.js';
 
 const articlesSelector = createSelector(
   (state) => state.articles,
@@ -11,8 +14,24 @@ const articlesSelector = createSelector(
 );
 
 const HomePage = () => {
+  const dispatch = useDispatch();
   const articlesFetching = useSelector((state) => state.articlesFetching);
   const articles = useSelector(articlesSelector);
+
+  const fetchArticles = () => {
+    if (articlesFetching !== 'requested') {
+      dispatch(asyncActions.fetchArticles());
+    }
+  };
+
+  useEffect(() => {
+    fetchArticles();
+    // const intervalId = setInterval(() => {
+    //   fetchArticles();
+    // }, 10000);
+
+    // return () => { console.log(intervalId); clearInterval(intervalId); }
+  }, []);
 
   return (
     <Container>
@@ -20,6 +39,16 @@ const HomePage = () => {
       <div className={`text-center ${articlesFetching === 'requested' ? 'visible' : 'invisible'}`}>
         <Spinner animation="border" />
       </div>
+      <div className="text-center mb-3">
+        <Button
+          variant="outline-dark pl-5 pr-5"
+          disabled={articlesFetching === 'requested'}
+          onClick={fetchArticles}
+        >
+          Reload
+        </Button>
+      </div>
+
       <ListGroup>
         {articles.map((a) => (
           <ListGroup.Item key={a.id}>

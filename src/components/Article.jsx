@@ -8,8 +8,6 @@ const Article = (props) => {
     },
   } = props;
 
-  console.log(article);
-
   return (
     <article>
       <Link

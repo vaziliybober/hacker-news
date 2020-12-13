@@ -7,7 +7,7 @@ import { fetchArticles } from './articlesFetching.js';
 const slice = createSlice({
   name: 'articles',
   initialState: {
-    byId: [], allIds: [],
+    byId: {}, allIds: [],
   },
   reducers: {},
   extraReducers: {

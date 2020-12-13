@@ -2,10 +2,13 @@ import React from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 import { Container, Button } from 'react-bootstrap';
 
+import Comments from './Comments.jsx';
+
 const ArticlePage = () => {
   const {
+    article,
     article: {
-      url, title, time, by,
+      url, title, time, by, kids,
     },
   } = useLocation().state;
 
@@ -24,6 +27,7 @@ const ArticlePage = () => {
         }
         <Button variant="outline-dark pl-5 pr-5" onClick={() => history.goBack()}>Back</Button>
       </div>
+      <Comments article={article} />
     </Container>
   );
 };
