@@ -8,6 +8,8 @@ const Article = (props) => {
     },
   } = props;
 
+  console.log(article);
+
   return (
     <article>
       <Link
@@ -32,7 +34,7 @@ const Article = (props) => {
             Rating:
             {score}
           </span>
-          <div>{new Date(time).toString()}</div>
+          <div>{new Date(time * 1000).toString()}</div>
         </div>
 
       </Link>

@@ -17,7 +17,7 @@ const ArticlePage = () => {
       <div className="d-flex flex-column align-items-center">
         <div className="lead">by</div>
         <span className="h3 font-italic mb-5">{by}</span>
-        <div>{new Date(time).toString()}</div>
+        <div>{new Date(time * 1000).toString()}</div>
         {
           url ? <a className="text-center" href={url} target="_blank" rel="noreferrer">{url}</a>
             : <div className="text-muted">No link available</div>
