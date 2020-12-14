@@ -20,7 +20,7 @@ const slice = createSlice({
         const descendantIds = childrenIds.flatMap((id) => findDescendantIds(id));
         return [...childrenIds, ...descendantIds];
       };
-      
+
       const remainingIds = _.difference(state.allIds, findDescendantIds(comment.id));
       const newById = _.pick(state.byId, remainingIds);
 

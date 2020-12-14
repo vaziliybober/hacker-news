@@ -5,9 +5,9 @@ import { asyncActions } from '../slices/index.js';
 export default () => {
   const dispatch = useDispatch();
   const articlesFetching = useSelector((state) => state.articlesFetching);
-  const fetchArticles = () => {
+  const fetchArticles = (type = 'new') => {
     if (articlesFetching !== 'requested') {
-      dispatch(asyncActions.fetchArticles());
+      dispatch(asyncActions.fetchArticles(type));
     }
   };
 

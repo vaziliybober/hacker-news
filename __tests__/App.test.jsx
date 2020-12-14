@@ -16,7 +16,7 @@ const fakeApi = async () => {
   const comments = JSON.parse(await fsp.readFile(getFixturePath('comments.json')));
   const replies = JSON.parse(await fsp.readFile(getFixturePath('replies.json')));
 
-  HackerNewsAPI.prototype.fetchArticles = async () => articles;
+  HackerNewsAPI.prototype.fetchNewArticles = async () => articles;
 
   HackerNewsAPI.prototype.fetchComments = async (ids) => comments[JSON.stringify(ids)];
 
@@ -37,7 +37,7 @@ afterEach(() => {
 test('HomePage', async () => {
   expect(screen.getByText(/Hacker News/i)).toBeInTheDocument();
 
-  const reloadButton = screen.getByText(/Reload/i);
+  const reloadButton = screen.getAllByText(/Reload/i)[0];
   expect(reloadButton).toBeInTheDocument();
   expect(reloadButton).toBeDisabled();
 

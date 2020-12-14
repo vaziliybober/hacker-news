@@ -4,24 +4,16 @@ import { ListGroup, Spinner, Button } from 'react-bootstrap';
 import Comment from './Comment.jsx';
 import useComments from '../hooks/useComments.js';
 import useFetchComments from '../hooks/useFetchComments.js';
-
-import useLogMount from '../hooks/useLogMount.js';
+import useInterval from '../hooks/useInterval.js';
 
 const Comments = (props) => {
   const { article } = props;
   const [commentsFetching, fetchComments] = useFetchComments(article);
   const [comments] = useComments(article);
 
-  useLogMount('Comments');
+  useEffect(fetchComments, []);
 
-  useEffect(() => {
-    fetchComments();
-    // const intervalId = setInterval(() => {
-    //   fetchComments();
-    // }, 10000);
-
-    // return () => { console.log(intervalId); clearInterval(intervalId); }
-  }, []);
+  useInterval(fetchComments, 60000);
 
   return (
     <section>

@@ -3,17 +3,25 @@ import axios from 'axios';
 
 import urls from './urls.js';
 
-export default class HackerNewsAPI {
-  async fetchArticles() {
-    const { data } = await axios.get(urls.articles());
-    const ids = data.slice(0, 100);
-    const promises = ids.map((id) => axios.get(urls.article(id)));
-    const results = await Promise.allSettled(promises);
-    const articles = results
-      .filter((res) => res.status === 'fulfilled')
-      .map((res) => res.value.data);
+const fetchArticles = async (url) => {
+  const { data } = await axios.get(url);
+  const ids = data.slice(0, 100);
+  const promises = ids.map((id) => axios.get(urls.article(id)));
+  const results = await Promise.allSettled(promises);
+  const articles = results
+    .filter((res) => res.status === 'fulfilled')
+    .map((res) => res.value.data);
 
-    return articles;
+  return articles;
+};
+
+export default class HackerNewsAPI {
+  async fetchNewArticles() {
+    return fetchArticles(urls.newArticles());
+  }
+
+  async fetchTopArticles() {
+    return fetchArticles(urls.topArticles());
   }
 
   async fetchComments(ids) {

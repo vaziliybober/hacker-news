@@ -5,11 +5,8 @@ import HomePage from './HomePage.jsx';
 import ArticlePage from './ArticlePage.jsx';
 import useFetchArticles from '../hooks/useFetchArticles.js';
 
-import useLogMount from '../hooks/useLogMount.js';
-
 export default () => {
   const [, fetchArticles] = useFetchArticles();
-  useLogMount('App');
 
   useEffect(() => {
     fetchArticles();
