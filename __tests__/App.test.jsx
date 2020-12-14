@@ -24,9 +24,15 @@ const fakeApi = async () => {
 };
 
 beforeEach(async () => {
+  jest.useFakeTimers();
   await fakeApi();
   render(createApp());
 });
+
+afterEach(() => {
+  jest.runOnlyPendingTimers()
+  jest.useRealTimers()
+})
 
 test('HomePage', async () => {
   expect(screen.getByText(/Hacker News/i)).toBeInTheDocument();

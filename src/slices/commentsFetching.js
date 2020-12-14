@@ -7,8 +7,7 @@ import HackerNewsAPI from '../hackerNewsAPI.js';
 const api = new HackerNewsAPI();
 
 export const fetchComments = createAsyncThunk('COMMENTS_FETCH', async ({ article }) => {
-  const comments = await api.fetchComments(article.kids ?? []);
-  comments.forEach((c) => { c.parent = article.id; });
+  const comments = await api.fetchComments(article.kids || []);
   return { comments };
 });
 
