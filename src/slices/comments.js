@@ -3,7 +3,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import _ from 'lodash';
 
-import { fetchComments } from './commentsFetching.js';
+import { fetchRootComments } from './rootCommentsFetching.js';
 import { fetchDescendantComments } from './descendantCommentsFetching.js';
 
 const slice = createSlice({
@@ -31,7 +31,7 @@ const slice = createSlice({
     },
   },
   extraReducers: {
-    [fetchComments.fulfilled]: (state, { payload }) => {
+    [fetchRootComments.fulfilled]: (state, { payload }) => {
       const { comments } = payload;
       return {
         byId: { ...state.byId, ...Object.fromEntries(comments.map((c) => [c.id, c])) },
