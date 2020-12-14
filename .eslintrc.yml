@@ -6,8 +6,6 @@ plugins:
 extends:
   - airbnb
   - "plugin:jest/recommended"
-  - "plugin:functional/external-recommended"
-  - "plugin:functional/recommended"
 
 parser: babel-eslint
 

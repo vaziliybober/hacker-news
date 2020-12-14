@@ -2,10 +2,12 @@
 
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-import { fetchReplies as fetcher } from '../hackerNewsAPI.js';
+import HackerNewsAPI from '../hackerNewsAPI.js';
+
+const api = new HackerNewsAPI();
 
 export const fetchReplies = createAsyncThunk('REPLIES_FETCH', async ({ comment }) => {
-  const replies = await fetcher(comment.kids || []);
+  const replies = await api.fetchReplies(comment.kids || []);
   return { replies };
 });
 

@@ -8,7 +8,7 @@ const ArticlePage = () => {
   const {
     article,
     article: {
-      url, title, time, by, kids,
+      url, title, time, by,
     },
   } = useLocation().state;
 

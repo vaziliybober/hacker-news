@@ -1,9 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-import { fetchArticles as fetcher } from '../hackerNewsAPI.js';
+import HackerNewsAPI from '../hackerNewsAPI.js';
+
+const api = new HackerNewsAPI();
 
 export const fetchArticles = createAsyncThunk('ARTICLES_FETCH', async () => {
-  const articles = await fetcher();
+  const articles = await api.fetchArticles();
   return { articles };
 });
 

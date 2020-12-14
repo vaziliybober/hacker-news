@@ -1,0 +1,42 @@
+{
+  "[25411598,25409720]": [
+    {
+      "by": "frisco",
+      "id": 25411598,
+      "kids": [
+        25411825,
+        25411707,
+        25411831
+      ],
+      "parent": 25409416,
+      "text": "All these systems are just too complicated. We keep adding features on features to software without a second thought, because it&#x27;s invisible and you can&#x27;t immediately tell from looking at it how insane it is, in a way that you wouldn&#x27;t be able to ignore if these were mechanical systems.<p>Also, not that it would have prevented this attack, but as a community we desperately need a fully open source FPGA-based ultra simple firewall appliance. The absolute minimum set of configuration options, the simplest possible hardware architecture; something you could actually trust with you life. Right now I have zero confidence that <i>any</i> of the commercially available security appliances are actually secure against nation-states.",
+      "time": 1607902449,
+      "type": "comment"
+    },
+    {
+      "by": "jkelleyrtp",
+      "id": 25409720,
+      "kids": [
+        25411215
+      ],
+      "parent": 25409416,
+      "text": "&gt; The hack involves the NTIA’s office software, Microsoft’s Office 365. Staff emails at the agency were monitored by the hackers for months, sources said.<p>&gt; The hackers are “highly sophisticated” and have been able to trick the Microsoft platform’s authentication controls, according to a person familiar with the incident, who spoke on condition of anonymity because they were not allowed to speak to the press.<p>&gt; “This is a nation state,” said a different person briefed on the matter. “We just don’t know which one yet.”<p>I bet it was someone on r&#x2F;wallstreetbets",
+      "time": 1607890068,
+      "type": "comment"
+    }
+  ],
+  "[25406219]": [
+    {
+      "by": "kashyapc",
+      "id": 25406219,
+      "kids": [
+        25408744,
+        25408186
+      ],
+      "parent": 25405737,
+      "text": "I recently discovered the <a href=\"https:&#x2F;&#x2F;openlibrary.org&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;openlibrary.org&#x2F;</a> by The Internet Archive.  On the face of it, their &quot;about&quot; page[1] sounds appealing (not least because it resonates with my open source values):<p><i>One web page for every book ever published. It&#x27;s a lofty but achievable goal.</i><p><i>To build Open Library, we need hundreds of millions of book records, a wiki interface, and lots of people who are willing to contribute their time and effort to building the site.</i><p><i>To date, we have gathered over 20 million records from a variety of large catalogs as well as single contributions, with more on the way.</i><p><i>Open Library is an open project: the software is open, the data are open, the documentation is open, and we welcome your contribution. Whether you fix a typo, add a book, or write a widget--it&#x27;s all welcome. We have a small team of fantastic programmers who have accomplished a lot, but we can&#x27;t do it alone!</i><p>---<p>They also seem to provide an API[2].<p>[1] <a href=\"https:&#x2F;&#x2F;openlibrary.org&#x2F;about\" rel=\"nofollow\">https:&#x2F;&#x2F;openlibrary.org&#x2F;about</a><p>[2] <a href=\"https:&#x2F;&#x2F;openlibrary.org&#x2F;developers&#x2F;api\" rel=\"nofollow\">https:&#x2F;&#x2F;openlibrary.org&#x2F;developers&#x2F;api</a>",
+      "time": 1607863526,
+      "type": "comment"
+    }
+  ]
+}

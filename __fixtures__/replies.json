@@ -1,0 +1,266 @@
+{
+  "[25411825,25411707,25411831]": [
+    {
+      "by": "thisisnico",
+      "id": 25411825,
+      "parent": 25411598,
+      "text": "This isn&#x27;t going to help if the discussed is essentially tunneled through the Nat using legit protocols and traffic to the vulnerable service, where most of the attacks actually happen on the software side. How do you architect a firewall to accurately know if the application layer traffic is legit or not? It might not even be possible to fully implement something like this. Sounds complicated already. There is a reason firewalls are complex because the application landscape is extremely complex.<p>Source: Am Sr. Systems Engineer.",
+      "time": 1607904334,
+      "type": "comment"
+    },
+    {
+      "by": "andrei_says_",
+      "id": 25411707,
+      "kids": [
+        25411960,
+        25411797
+      ],
+      "parent": 25411598,
+      "text": "Who would be trusted to design and procure the hardware for such a device?",
+      "time": 1607903390,
+      "type": "comment"
+    },
+    {
+      "by": "dataking",
+      "id": 25411831,
+      "parent": 25411598,
+      "text": "I agree with the concerns over complexity. That said, I see nothing in the article that indicates that a firewall appliance is the correct countermeasure. Defense in depth is likely what you need (and may ultimately get) here.",
+      "time": 1607904364,
+      "type": "comment"
+    },
+    {
+      "by": "alquemist",
+      "id": 25411960,
+      "parent": 25411707,
+      "text": "<a href=\"https:&#x2F;&#x2F;leanprover.github.io\" rel=\"nofollow\">https:&#x2F;&#x2F;leanprover.github.io</a><p>While it is difficult to design a secure procurement chain all the way to the SiO2, we could at least design simple enough hw&#x2F;sw systems for which formal verification is an economical option. And then force government entities to use formally verified systems instead of the bug ridden crap most shops, especially the sw ones, have to ship under intense deadline pressure. The market has led us into a broken local optima, no way to get out short of state level action.",
+      "time": 1607905543,
+      "type": "comment"
+    },
+    {
+      "by": "adamsea",
+      "id": 25411797,
+      "parent": 25411707,
+      "text": "Good question :).<p>Maybe layers? For government agencies, the government could manage procurement.<p>For non-government organizations, realistically, maybe some sort of public-private&#x2F;foundation partnership, if the NSA is willing to bend a little. Which at this point might be in their best interest.",
+      "time": 1607904101,
+      "type": "comment"
+    }
+  ],
+  "[25411215]": [
+    {
+      "by": "simias",
+      "id": 25411215,
+      "kids": [
+        25412093,
+        25411322
+      ],
+      "parent": 25409720,
+      "text": "I&#x27;m always skeptical of these &quot;nation state&quot; claims, it seems like an easy way out of any tough question about the security of these systems.<p>&quot;No, no, you don&#x27;t understand, it&#x27;s not that our systems are insecure, it&#x27;s that the attackers where highly sophisticated and had the resources of a nation state, otherwise it would never have worked out&quot;.<p>I suppose &quot;we think it could be done by a group of two or three teenagers with decent knowledge of wget&quot; doesn&#x27;t have the same ring to it.",
+      "time": 1607899792,
+      "type": "comment"
+    },
+    {
+      "by": "tialaramex",
+      "id": 25412093,
+      "parent": 25411215,
+      "text": "Right. There are situations where we can see that the only apparent way to do something needed very considerable resources, which suggests a state actor.<p>Equation Group is presumed to be (a front for) the NSA. It forged a (code signing) certificate that otherwise shouldn&#x27;t exist, using an MD5 collision. But not the MD5 collision painfully created by researchers a little earlier to demonstrate that MD5 was vulnerable, it used a brand new collision purpose made for this attack. That&#x27;s a considerable investment.<p>Then also, we can look at who benefits from what was done. Equation Group&#x27;s &quot;Flame&quot; malware damaged the Iranian nuclear programme. That&#x27;s something the US government, Israel, some other countries wanted, but it isn&#x27;t something a bored teenager wants, or a drug cartel, or most for-profit corporations.<p>As described so far I don&#x27;t see either the resource needs or the outcome satisfying this conclusion.",
+      "time": 1607907029,
+      "type": "comment"
+    },
+    {
+      "by": "res0nat0r",
+      "id": 25411322,
+      "kids": [
+        25411801
+      ],
+      "parent": 25411215,
+      "text": "WaPo reporting it is APT29.<p><a href=\"https:&#x2F;&#x2F;www.washingtonpost.com&#x2F;national-security&#x2F;russian-government-spies-are-behind-a-broad-hacking-campaign-that-has-breached-us-agencies-and-a-top-cyber-firm&#x2F;2020&#x2F;12&#x2F;13&#x2F;d5a53b88-3d7d-11eb-9453-fc36ba051781_story.html\" rel=\"nofollow\">https:&#x2F;&#x2F;www.washingtonpost.com&#x2F;national-security&#x2F;russian-gov...</a>",
+      "time": 1607900464,
+      "type": "comment"
+    },
+    {
+      "by": "simias",
+      "id": 25411801,
+      "kids": [
+        25411877,
+        25411849
+      ],
+      "parent": 25411322,
+      "text": "I wish we had more concrete evidence than &quot;according to people familiar with the matter&quot; though. That&#x27;s kind of my issue: if these attackers are so sophisticated, how can they be sure it&#x27;s this particular group?<p>I realize that there are probably many good reasons for not sharing deep technical details in such cases, but from the point of view of an external observer it&#x27;s really hard to know who should be trusted and how solid these claims are.",
+      "time": 1607904129,
+      "type": "comment"
+    },
+    {
+      "by": "astronautjones",
+      "id": 25411877,
+      "kids": [
+        25412061
+      ],
+      "parent": 25411801,
+      "text": "I totally agree with your point (and would trust a hazy dream more than anything coming from this government), but I&#x27;d add that even if they claim to identify these parties forensically, they&#x27;re often using parallel construction through their own espionage. like in the mueller investigation, they had a lot of firsthand knowledge of the IRA&#x27;s business from inside the building (and the names of everyone that worked there). It&#x27;s often not a technical conclusion based on the intrusions, but a conclusion reached by evidence gathered through other means<p>bellingcat has also done a pretty remarkable job of identifying state-employed hackers and spies just through buying russian passport control information and other private information that&#x27;s out there on the market",
+      "time": 1607904749,
+      "type": "comment"
+    },
+    {
+      "by": "minerjoe",
+      "id": 25411849,
+      "parent": 25411801,
+      "text": "Exacty. And we also know that the NSA&#x2F;CIA have placed Russian language inside their exploits to frame other countries.",
+      "time": 1607904542,
+      "type": "comment"
+    },
+    {
+      "by": "9HZZRfNlpR",
+      "id": 25412061,
+      "parent": 25411877,
+      "text": "Sounds reasonable but I don&#x27;t remind reading it from the released pdf of the investigation. I actually read the whole thing, it&#x27;s long but rather interesting from the hacker and espionage spirit.",
+      "time": 1607906578,
+      "type": "comment"
+    }
+  ],
+  "[25408744,25408186]": [
+    {
+      "by": "mekarpeles",
+      "id": 25408744,
+      "kids": [
+        25409007,
+        25409595
+      ],
+      "parent": 25406219,
+      "text": "For anyone who wishes Open Library was even better, please join one of our weekly community calls @ 11:30am Pacific.<p>For an invite, please send me an email at mek@archive.org or go to:\n<a href=\"https:&#x2F;&#x2F;openlibrary.org&#x2F;volunteer\" rel=\"nofollow\">https:&#x2F;&#x2F;openlibrary.org&#x2F;volunteer</a><p># APIs &amp; Data Dumps<p>- <a href=\"https:&#x2F;&#x2F;openlibrary.org&#x2F;developers&#x2F;api\" rel=\"nofollow\">https:&#x2F;&#x2F;openlibrary.org&#x2F;developers&#x2F;api</a><p>- <a href=\"https:&#x2F;&#x2F;openlibrary.org&#x2F;dev&#x2F;docs&#x2F;api&#x2F;books\" rel=\"nofollow\">https:&#x2F;&#x2F;openlibrary.org&#x2F;dev&#x2F;docs&#x2F;api&#x2F;books</a><p>- <a href=\"https:&#x2F;&#x2F;openlibrary.org&#x2F;developers&#x2F;dumps\" rel=\"nofollow\">https:&#x2F;&#x2F;openlibrary.org&#x2F;developers&#x2F;dumps</a> monthly data dumps for if you need bulk access and the APIs are not enough.<p># Spread the word<p>Also, if you want to help raise awareness of this resource, please help us get the word out on twitter!<p>1. <a href=\"https:&#x2F;&#x2F;twitter.com&#x2F;openlibrary&#x2F;status&#x2F;1338185940469051392\" rel=\"nofollow\">https:&#x2F;&#x2F;twitter.com&#x2F;openlibrary&#x2F;status&#x2F;1338185940469051392</a><p>2. <a href=\"https:&#x2F;&#x2F;twitter.com&#x2F;openlibrary&#x2F;status&#x2F;1338186553915367425\" rel=\"nofollow\">https:&#x2F;&#x2F;twitter.com&#x2F;openlibrary&#x2F;status&#x2F;1338186553915367425</a><p># Issues<p>Thank you all for helping us discover some issues with our goodreads importer and search (recently migrated to Python3 + thanks @cdrini et al for these fast bug fixes! If you notice an problem, please help open an issue here:\n<a href=\"https:&#x2F;&#x2F;github.com&#x2F;internetarchive&#x2F;openlibrary&#x2F;issues&#x2F;new&#x2F;choose\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;internetarchive&#x2F;openlibrary&#x2F;issues&#x2F;new&#x2F;ch...</a><p># Learn More<p>- <a href=\"https:&#x2F;&#x2F;archive.org&#x2F;details&#x2F;openlibrary-tour-2020&#x2F;openlibrary.ogv\" rel=\"nofollow\">https:&#x2F;&#x2F;archive.org&#x2F;details&#x2F;openlibrary-tour-2020&#x2F;openlibrar...</a> if you want to learn more about Open Library, here&#x27;s a short intro vid.<p>- <a href=\"https:&#x2F;&#x2F;github.com&#x2F;internetarchive&#x2F;openlibrary\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;internetarchive&#x2F;openlibrary</a> if you want to follow on github.",
+      "time": 1607883798,
+      "type": "comment"
+    },
+    {
+      "by": "jabo",
+      "id": 25408186,
+      "kids": [
+        25409365,
+        25408204
+      ],
+      "parent": 25406219,
+      "text": "Openlibrary looks pretty awesome. Thank you for sharing!<p>Would anyone be interested in having an instant search experience for this books dataset, like the one I built for the 2M recipes database posted on HN earlier this week: <a href=\"https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=25365397\" rel=\"nofollow\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=25365397</a>",
+      "time": 1607880323,
+      "type": "comment"
+    },
+    {
+      "by": "rikroots",
+      "id": 25409007,
+      "kids": [
+        25409342
+      ],
+      "parent": 25408744,
+      "text": "Hi, Mek. Awesome project!<p>How do I go about claiming my author page? The current book listed there has been officially &quot;retired&quot; for over a decade now, and I have plenty of other books that I&#x27;d be happy to add.<p><a href=\"https:&#x2F;&#x2F;openlibrary.org&#x2F;authors&#x2F;OL2965893A&#x2F;Rik_Roots\" rel=\"nofollow\">https:&#x2F;&#x2F;openlibrary.org&#x2F;authors&#x2F;OL2965893A&#x2F;Rik_Roots</a>",
+      "time": 1607885501,
+      "type": "comment"
+    },
+    {
+      "by": "bloak",
+      "id": 25409595,
+      "kids": [
+        25409876
+      ],
+      "parent": 25408744,
+      "text": "I noticed that two authors with the same name are conflated. But if I try to edit any of the editions involved, the interface won&#x27;t let me either modify or delete an existing author nor even add a new author using the author ID rather than the author&#x27;s name. What should I do to sort this out?",
+      "time": 1607889433,
+      "type": "comment"
+    },
+    {
+      "by": "mekarpeles",
+      "id": 25409365,
+      "kids": [
+        25409533
+      ],
+      "parent": 25408186,
+      "text": "Jabo, please also help us @ openlibrary improve our search. @cdrini is the lead on our solr efforts and we could really benefit from teaming with someone who is really passionate about search. If you have questions about using our data, please send over a message and I&#x27;m happy to help: mek@archive.org",
+      "time": 1607887877,
+      "type": "comment"
+    },
+    {
+      "by": "obviyus",
+      "id": 25408204,
+      "kids": [
+        25408386
+      ],
+      "parent": 25408186,
+      "text": "That would be amazing!",
+      "time": 1607880446,
+      "type": "comment"
+    },
+    {
+      "by": "mekarpeles",
+      "id": 25409342,
+      "parent": 25409007,
+      "text": "Howdy rikroots! Thanks for this kind message, we&#x27;re really excited about designing a way to help authors claim their pages. It&#x27;s not a feature our current author pages have <i>yet</i>.<p>As a project of the non-profit Internet Archive, having a trusted catalog is pretty paramount to what we&#x27;re trying to accomplish and Aaron Swartz&#x27;s original dream for an Open Library.<p>I&#x27;ve created an issue for this feature (as it&#x27;s something we&#x27;ve discussed doing for a while). I&#x27;ll also be adding this to our upcoming Tuesday 2021 roadmap discussion.<p><a href=\"https:&#x2F;&#x2F;github.com&#x2F;internetarchive&#x2F;openlibrary&#x2F;issues&#x2F;4263\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;internetarchive&#x2F;openlibrary&#x2F;issues&#x2F;4263</a><p>Thanks for raising this",
+      "time": 1607887725,
+      "type": "comment"
+    },
+    {
+      "by": "mekarpeles",
+      "id": 25409876,
+      "kids": [
+        25410541
+      ],
+      "parent": 25409595,
+      "text": "Howdy bloak,<p>Many of our librarian processes &amp; FAQs are detailed here: <a href=\"https:&#x2F;&#x2F;openlibrary.org&#x2F;librarians\" rel=\"nofollow\">https:&#x2F;&#x2F;openlibrary.org&#x2F;librarians</a><p>Most data on Open Library is publicly editable by members. In this case, author merging is a capability that only folks who have been added to our Librarians usergroup can access because the process of reverting an accidental merge is quite time consuming (and so we have some training in place).<p>If you tweet @ our lead community librarian (<a href=\"http:&#x2F;&#x2F;twitter.com&#x2F;seabelis\" rel=\"nofollow\">http:&#x2F;&#x2F;twitter.com&#x2F;seabelis</a>) she can likely help you make this fix! Also, if you&#x27;re interested in helping us make changes like this, we can invite you to our slack channel :)",
+      "time": 1607891083,
+      "type": "comment"
+    },
+    {
+      "by": "jabo",
+      "id": 25409533,
+      "parent": 25409365,
+      "text": "Happy to! Sent you a DM on Twitter, but I&#x27;ll email you shortly.",
+      "time": 1607889091,
+      "type": "comment"
+    },
+    {
+      "by": "jabo",
+      "id": 25408386,
+      "kids": [
+        25408834
+      ],
+      "parent": 25408204,
+      "text": "Alright! A handful of upvotes in addition to a comment. I’m on it! I’ll whip something up and report back in a few hours.",
+      "time": 1607881559,
+      "type": "comment"
+    },
+    {
+      "by": "bloak",
+      "id": 25410541,
+      "parent": 25409876,
+      "text": "Thanks, but what I&#x27;m trying to do is split authors ... and I think I&#x27;ve worked out how to do it. The trick is to make sure you&#x27;re looking at the &quot;work&quot; rather than the &quot;edition&quot;, because when you&#x27;re looking at the &quot;edition&quot; the author is immutable.",
+      "time": 1607895424,
+      "type": "comment"
+    },
+    {
+      "by": "jabo",
+      "id": 25408834,
+      "kids": [
+        25410378
+      ],
+      "parent": 25408386,
+      "text": "Looks like it&#x27;s going to be a while before I can download the dataset. Seems to be pretty slow even when downloading on EC2 with a 10Gpbs connection.<p><pre><code>  ol_dump_latest.txt.gz           0%[                                                  ]  28.73M   115KB&#x2F;s    eta 21h 54m</code></pre>",
+      "time": 1607884328,
+      "type": "comment"
+    },
+    {
+      "by": "dmje",
+      "id": 25410378,
+      "kids": [
+        25410919
+      ],
+      "parent": 25408834,
+      "text": "Be great to see your search on there. I was admiring the speed and accuracy on the post you put on the other day...",
+      "time": 1607894278,
+      "type": "comment"
+    },
+    {
+      "by": "jabo",
+      "id": 25410919,
+      "parent": 25410378,
+      "text": "Thank you! Working on it as we speak.",
+      "time": 1607897768,
+      "type": "comment"
+    }
+  ]
+}

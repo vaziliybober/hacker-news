@@ -18,7 +18,6 @@ const CommentThread = (props) => {
               <span>
                 <Interweave content={c.text} />
               </span>
-              {c.text}
             </div>
             <CommentThread allComments={allComments} parentComment={c} />
           </ListGroup.Item>

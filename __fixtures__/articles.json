@@ -1,0 +1,29 @@
+[
+  {
+    "by": "re_re",
+    "descendants": 170,
+    "id": 25409416,
+    "kids": [
+      25411598,
+      25409720
+    ],
+    "score": 439,
+    "time": 1607888268,
+    "title": "U.S. Treasury breached by hackers backed by foreign government – sources",
+    "type": "story",
+    "url": "https://www.reuters.com/article/us-usa-cyber-amazon-com-exclsuive/u-s-treasury-breached-by-hackers-backed-by-foreign-government-sources-idUSKBN28N0PG"
+  },
+  {
+    "by": "buttscicles",
+    "descendants": 351,
+    "id": 25405737,
+    "kids": [
+      25406219
+    ],
+    "score": 657,
+    "time": 1607857676,
+    "title": "Goodreads plans to retire API access, disables existing API keys",
+    "type": "story",
+    "url": "https://joealcorn.co.uk/blog/2020/goodreads-retiring-API"
+  }
+]

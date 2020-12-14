@@ -58,6 +58,7 @@ const Comments = (props) => {
           <ListGroup.Item key={c.id}>
             <div
               className={`${c.kids ? 'btn ' : ''}text-left`}
+              role="listitem"
               onClick={() => {
                 if (repliesFetching[c.id] !== 'requested') {
                   if (opened[c.id]) {
