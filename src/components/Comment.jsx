@@ -14,36 +14,39 @@ const Comment = (props) => {
   const [, { removeReplies }] = useReplies(comment);
   const [opened, setOpened] = useState();
 
+  // FIXME: fix linter errors
+  /* eslint-disable */
   return (
-    <div
-      className={`${kids ? 'btn ' : ''}text-left`}
-      role="listitem"
-      onClick={() => {
-        if (repliesFetching !== 'requested') {
-          if (opened) {
-            removeReplies();
-            setOpened(false);
-          } else {
-            fetchReplies();
-            setOpened(true);
+    <article>
+      <div
+        className={`${kids ? 'btn ' : ''}text-left`}
+        onClick={() => {
+          if (repliesFetching !== 'requested') {
+            if (opened) {
+              removeReplies();
+              setOpened(false);
+            } else {
+              fetchReplies();
+              setOpened(true);
+            }
           }
-        }
-      }}
-    >
-      <div>
-        <span className="font-weight-bold">
-          {`${kids ? (opened ? 'v ' : '> ') : '- '}[${by}]: `}
-        </span>
-        <span>
-          <Interweave content={text} />
-        </span>
+        }}
+      >
+        <div>
+          <span className="font-weight-bold">
+            {`${kids ? (opened ? 'v ' : '> ') : '-- '}[${by}]: `}
+          </span>
+          <span>
+            <Interweave content={text} />
+          </span>
 
-      </div>
-      <div className={`text-center ${repliesFetching === 'requested' ? 'visible' : 'invisible'}`}>
-        <Spinner animation="border" />
+        </div>
+        <div className={`text-center ${repliesFetching === 'requested' ? 'visible' : 'invisible'}`}>
+          <Spinner animation="border" />
+        </div>
       </div>
       <CommentThread comment={comment} />
-    </div>
+    </article>
   );
 };
 

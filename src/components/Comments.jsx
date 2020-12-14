@@ -32,11 +32,12 @@ const Comments = (props) => {
       </div>
 
       <ListGroup>
-        {comments.map((c) => (
-          <ListGroup.Item key={c.id}>
-            <Comment comment={c} />
-          </ListGroup.Item>
-        ))}
+        {comments.length === 0 ? <div className="text-center text-muted">No comments</div>
+          : comments.map((c) => (
+            <ListGroup.Item key={c.id}>
+              <Comment comment={c} />
+            </ListGroup.Item>
+          ))}
       </ListGroup>
     </section>
 
