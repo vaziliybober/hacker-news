@@ -12,7 +12,7 @@ export default (comment) => {
   const dispatch = useDispatch();
   const replies = useSelector(selector).filter((c) => c.parent === comment.id);
   const repliesActions = {
-    removeReplies: () => dispatch(actions.removeReplies({ comment })),
+    removeReplies: () => dispatch(actions.removeDescendantComments({ comment })),
   };
 
   return [replies, repliesActions];

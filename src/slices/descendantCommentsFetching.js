@@ -6,25 +6,25 @@ import HackerNewsAPI from '../hackerNewsAPI.js';
 
 const api = new HackerNewsAPI();
 
-export const fetchReplies = createAsyncThunk('REPLIES_FETCH', async ({ comment }) => {
+export const fetchDescendantComments = createAsyncThunk('DESCENDANT_COMMENTS_FETCH', async ({ comment }) => {
   const replies = await api.fetchReplies(comment.kids || []);
   return { replies };
 });
 
 const slice = createSlice({
-  name: 'repliesFetching',
+  name: 'descendantCommentsFetching',
   initialState: {},
   reducers: {},
   extraReducers: {
-    [fetchReplies.fulfilled]: (state, { meta }) => {
+    [fetchDescendantComments.fulfilled]: (state, { meta }) => {
       const { arg: { comment } } = meta;
       state[comment.id] = 'finished';
     },
-    [fetchReplies.pending]: (state, { meta }) => {
+    [fetchDescendantComments.pending]: (state, { meta }) => {
       const { arg: { comment } } = meta;
       state[comment.id] = 'requested';
     },
-    [fetchReplies.rejected]: (state, { meta }) => {
+    [fetchDescendantComments.rejected]: (state, { meta }) => {
       const { arg: { comment } } = meta;
       state[comment.id] = 'failed';
     },

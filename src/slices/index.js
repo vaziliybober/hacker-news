@@ -4,14 +4,14 @@ import articles, { actions as articlesActions } from './articles.js';
 import comments, { actions as commentsActions } from './comments.js';
 import articlesFetching, { actions as articlesFetchingActions, fetchArticles } from './articlesFetching.js';
 import commentsFetching, { actions as commentsFetchingActions, fetchComments } from './commentsFetching.js';
-import repliesFetching, { actions as repliesFetchingActions, fetchReplies } from './repliesFetching.js';
+import descendantCommentsFetching, { actions as descendantCommentsFetchingActions, fetchDescendantComments } from './descendantCommentsFetching.js';
 
 export default combineReducers({
   articles,
   comments,
   articlesFetching,
   commentsFetching,
-  repliesFetching,
+  descendantCommentsFetching,
 });
 
 const actions = {
@@ -19,13 +19,13 @@ const actions = {
   ...commentsActions,
   ...articlesFetchingActions,
   ...commentsFetchingActions,
-  ...repliesFetchingActions,
+  ...descendantCommentsFetchingActions,
 };
 
 const asyncActions = {
   fetchArticles,
   fetchComments,
-  fetchReplies,
+  fetchDescendantComments,
 };
 
 export { actions, asyncActions };
