@@ -30,9 +30,9 @@ beforeEach(async () => {
 });
 
 afterEach(() => {
-  jest.runOnlyPendingTimers()
-  jest.useRealTimers()
-})
+  jest.runOnlyPendingTimers();
+  jest.useRealTimers();
+});
 
 test('HomePage', async () => {
   expect(screen.getByText(/Hacker News/i)).toBeInTheDocument();

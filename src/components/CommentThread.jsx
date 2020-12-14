@@ -2,24 +2,26 @@ import React from 'react';
 import { ListGroup } from 'react-bootstrap';
 import Interweave from 'interweave';
 
+import useReplies from '../hooks/useReplies.js';
+
 const CommentThread = (props) => {
-  const { allComments, parentComment } = props;
-  const comments = allComments.filter((c) => c.parent === parentComment.id);
+  const { comment } = props;
+  const [replies] = useReplies(comment);
 
   return (
     <section>
       <ListGroup>
-        {comments.map((c) => (
-          <ListGroup.Item key={c.id}>
+        {replies.map((r) => (
+          <ListGroup.Item key={r.id}>
             <div>
               <span className="font-weight-bold">
-                {`[${c.by}]: `}
+                {`[${r.by}]: `}
               </span>
               <span>
-                <Interweave content={c.text} />
+                <Interweave content={r.text} />
               </span>
             </div>
-            <CommentThread allComments={allComments} parentComment={c} />
+            <CommentThread comment={r} />
           </ListGroup.Item>
         ))}
       </ListGroup>

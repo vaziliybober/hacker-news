@@ -1,32 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { createSelector } from 'reselect';
-import Interweave from 'interweave';
+import React, { useEffect } from 'react';
 import { ListGroup, Spinner, Button } from 'react-bootstrap';
 
-import CommentThread from './CommentThread.jsx';
-import { actions, asyncActions } from '../slices/index.js';
+import Comment from './Comment.jsx';
+import useComments from '../hooks/useComments.js';
+import useFetchComments from '../hooks/useFetchComments.js';
 
-const commentsSelector = createSelector(
-  (state) => state.comments,
-  ({ byId, allIds }) => allIds.map((id) => byId[id]),
-);
+import useLogMount from '../hooks/useLogMount.js';
 
 const Comments = (props) => {
-  const { article, article: { id } } = props;
-  const dispatch = useDispatch();
-  const commentsFetching = useSelector((state) => state.commentsFetching);
-  const repliesFetching = useSelector((state) => state.repliesFetching);
-  const comments = useSelector(commentsSelector).filter((c) => c.parent === id);
-  const allComments = useSelector(commentsSelector);
+  const { article } = props;
+  const [commentsFetching, fetchComments] = useFetchComments(article);
+  const [comments] = useComments(article);
 
-  const [opened, setOpened] = useState({});
-
-  const fetchComments = () => {
-    if (commentsFetching !== 'requested') {
-      dispatch(asyncActions.fetchComments({ article }));
-    }
-  };
+  useLogMount('Comments');
 
   useEffect(() => {
     fetchComments();
@@ -56,36 +42,7 @@ const Comments = (props) => {
       <ListGroup>
         {comments.map((c) => (
           <ListGroup.Item key={c.id}>
-            <div
-              className={`${c.kids ? 'btn ' : ''}text-left`}
-              role="listitem"
-              onClick={() => {
-                if (repliesFetching[c.id] !== 'requested') {
-                  if (opened[c.id]) {
-                    dispatch(actions.removeReplies({ comment: c }));
-                    setOpened((prev) => ({ ...prev, [c.id]: false }));
-                  } else {
-                    dispatch(asyncActions.fetchReplies({ comment: c }));
-                    setOpened((prev) => ({ ...prev, [c.id]: true }));
-                  }
-                }
-              }}
-            >
-              <div>
-                <span className="font-weight-bold">
-                  {`${c.kids ? (opened[c.id] ? 'v ' : '> ') : '- '}[${c.by}]: `}
-                </span>
-                <span>
-                  <Interweave content={c.text} />
-                </span>
-
-              </div>
-              <div className={`text-center ${repliesFetching[c.id] === 'requested' ? 'visible' : 'invisible'}`}>
-                <Spinner animation="border" />
-              </div>
-            </div>
-
-            <CommentThread allComments={allComments} parentComment={c} />
+            <Comment comment={c} />
           </ListGroup.Item>
         ))}
       </ListGroup>

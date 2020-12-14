@@ -14,27 +14,15 @@ const Article = (props) => {
         className="text-decoration-none"
         to={{
           pathname: `/${id}`,
-          state: {
-            article,
-          },
+          state: { article },
         }}
       >
         <div className="text-dark">
           <span className="font-weight-bold">{title}</span>
-          <span>
-            {' '}
-            (by
-            {by}
-            )
-          </span>
-          <span className="font-italic">
-            {' '}
-            Rating:
-            {score}
-          </span>
+          <span>{` (by ${by})`}</span>
+          <span className="font-italic">{` Rating: ${score}`}</span>
           <div>{new Date(time * 1000).toString()}</div>
         </div>
-
       </Link>
     </article>
   );

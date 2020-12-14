@@ -1,31 +1,20 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { createSelector } from 'reselect';
 import {
   Container, Spinner, ListGroup, Button,
 } from 'react-bootstrap';
 
 import Article from './Article.jsx';
-import { asyncActions } from '../slices/index.js';
-
-const articlesSelector = createSelector(
-  (state) => state.articles,
-  ({ byId, allIds }) => allIds.map((id) => byId[id]),
-);
+import useArticles from '../hooks/useArticles.js';
+import useFetchArticles from '../hooks/useFetchArticles.js';
+import useLogMount from '../hooks/useLogMount.js';
 
 const HomePage = () => {
-  const dispatch = useDispatch();
-  const articlesFetching = useSelector((state) => state.articlesFetching);
-  const articles = useSelector(articlesSelector);
+  const [articles] = useArticles();
+  const [articlesFetching, fetchArticles] = useFetchArticles();
 
-  const fetchArticles = () => {
-    if (articlesFetching !== 'requested') {
-      dispatch(asyncActions.fetchArticles());
-    }
-  };
+  useLogMount('HomePage');
 
   useEffect(() => {
-    fetchArticles();
     // const intervalId = setInterval(() => {
     //   fetchArticles();
     // }, 10000);

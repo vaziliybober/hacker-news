@@ -4,6 +4,8 @@ import { Container, Button } from 'react-bootstrap';
 
 import Comments from './Comments.jsx';
 
+import useLogMount from '../hooks/useLogMount.js';
+
 const ArticlePage = () => {
   const {
     article,
@@ -13,6 +15,8 @@ const ArticlePage = () => {
   } = useLocation().state;
 
   const history = useHistory();
+
+  useLogMount('ArticlePage');
 
   return (
     <Container>
